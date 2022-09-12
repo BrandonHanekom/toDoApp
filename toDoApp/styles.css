@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+body {
+    background: #EDF2F4;
+    color: #2B2D42;
+}
+
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+h2 {
+    color: #2B2D42;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: #8D99AE;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.welcome {
+    font-size: 40px;
+}
+
+.welcome .title {
+    display: flex;
+}
+
+.welcome .title input {
+    margin-left: 0.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.welcome .title,
+.welcome .title input {
+    color: #2B2D42;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.create-item input[type="text"] {
+    display: flex;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: #EDF2F4;
+    background-color: #2B2D42;
+    border-radius: 0.5rem;
+    box-shadow: #8D99AE;
+    margin-bottom: 1.5rem;
+}
+
+.create-item .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.create-item .options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    color: #EDF2F4;
+    background-color: #2B2D42;
+    border-radius: 0.5rem;
+    box-shadow: #8D99AE;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+.bubble {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #3A86FF;
+}
+
+.bubble.personal {
+    border-color: #FF006E;
+}
+
+.bubble::after {
+    content: "";
+    display: block;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    background-color: #3A86FF;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+.bubble.personal::after {
+    background-color: #FF006E;
+}
+
+input:checked ~ .bubble::after {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+.create-item .options label div {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+}
+
+.create-item input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    color: #EDF2F4;
+    background-color: #FF006E;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.create-item input[type="submit"]:hover {
+    opacity: 0.75;
+}
+
+.plans #list {
+    margin: 1rem;
+}
+
+.plans .plan-item {
+    display: flex;
+    align-items: center;
+    background-color: #2B2D42;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: #8D99AE;
+    margin-bottom: 1rem;
+}
+
+.plan-item label {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.plan-item .plan-content {
+    flex: 1 1 0%;
+}
+
+.plan-item .plan-content input {
+    color: #EDF2F4;
+    font-size: 1.125rem;
+}
+
+.plan-item .actions {
+    display: flex;
+    align-items: center;
+}
+
+.plan-item .actions button {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: #EDF2F4;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.plan-item .actions button:hover {
+    opacity: 0.75;
+}
+
+.plan-item .actions .edit {
+    margin-right: 0.5rem;
+    background-color: #FF006E;
+}
+
+.plan-item .actions .delete {
+    background-color: #FB5607;
+}
+
+.plan-item.done .plan-content input {
+    text-decoration: line-through;
+    color: #8D99AE;
+}

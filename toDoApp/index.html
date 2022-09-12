@@ -9,19 +9,19 @@
 </head>
 <body>
     <main id="app">
-        <section>
-            <h1 id="welcome">
+        <section class="welcome">
+            <h1 class="title"><input type="text" id="name" placeholder="Name here">
             </h1>
         </section>
 
-        <section id="create-item">
+        <section class="create-item">
             <h2>Plan your day ahead</h2>
             <form class="new-item-add">
                 <h3>Add plans</h3>
                 <input type="text" name="content" id="content" placeholder="e.g. make dinner"/>
 
                 <h3>Choose an area</h3>
-                <div id="options">
+                <div class="options">
                     <label>
                         <input type="radio" name="area" id="businessArea" value="business"/>
                         <span class="bubble business"></span>
@@ -34,27 +34,26 @@
                         <div>Personal</div>
                     </label>
                 </div>
-                <input type="submit" value="Add plan"/>
+                <input type="submit" value="Add plans"/>
             </form>
         </section>
 
-        <section id="plans">
+        <section class="plans">
             <h2>Plans</h2>
             <div class="list">
-                <div class="plan-item">
+                <!-- <div class="plan-item done">
                     <label>
                         <input type="checkbox"/>
                         <span class="bubble personal"></span>
                     </label>
                     <div class="plan-content">
-                        <input type="text" value="Make dinner" readonly/>
+                        <input type="text" value="" readonly/>
                     </div>
                     <div class="actions">
                         <button class="edit">Edit</button>
                         <button class="delete">Delete</button>
-                    </div>
-                </div>
-
+                    </div> 
+                </div> -->
             </div>
         </section>
     </main>
