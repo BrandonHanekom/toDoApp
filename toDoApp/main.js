@@ -1,7 +1,9 @@
 window.addEventListener('load', () => {
     plans = JSON.parse(localStorage.getItem('plans')) || [];
-    const nameInput = document.querySelector('#name')
-    const newPlanForm = document.querySelector('#new-plan-form')
+    DisplayPlans();
+    const nameInput = document.getElementById('name');
+    console.log(plans);
+    const newPlanForm = document.querySelector('#new-plan-form');
 
     const username = localStorage.getItem('username') || '';
 
@@ -30,7 +32,7 @@ window.addEventListener('load', () => {
     })
 })
 
-const greeting = document.getElementById("welcome");
+const greeting = document.getElementById("welcomeMessage");
 const hour = new Date().getHours();
 const welcomeTypes = ["Good morning", "Good afternoon", "Good evening"];
 let welcomeText = "";
@@ -42,14 +44,17 @@ else welcomeText = welcomeTypes[2];
 greeting.innerHTML = welcomeText;
 
 function DisplayPlans () {
+    // get reference to list html element
     const planList = document.querySelector('#plan-list');
-
+    // clear current content
     planList.innerHTML = '';
-
+    // add each plan to plan list
+    // ["have class", "have dinner"]
+    // on first loop, plan will be 'have class'
     plans.forEach(plan => {
         const planItem = document.createElement('div');
         planItem.classList.add('plan-item');
-
+    // creates html elements for display purposes
         const label = document.createElement('label');
         const input = document.createElement('input');
         const span = document.createElement('span');
@@ -85,7 +90,7 @@ function DisplayPlans () {
         planItem.appendChild(content);
         planItem.appendChild(actions);
 
-        planItem.appendChild(planItem);
+        planList.appendChild(planItem);
 
         if (plan.done) {
             planItem.classList.add('done')

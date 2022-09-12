@@ -9,14 +9,16 @@
 </head>
 <body>
     <main id="app">
-        <section class="welcome">
-            <h1 class="title"><input type="text" id="name" placeholder="Name here">
+        <section id="welcome">
+            <h1 class="title">
+                <p id="welcomeMessage"></p>
+                <input type="text" id="name" placeholder="Name here">
             </h1>
         </section>
 
         <section class="create-item">
             <h2>Plan your day ahead</h2>
-            <form class="new-item-add">
+            <form id="new-plan-form">
                 <h3>Add plans</h3>
                 <input type="text" name="content" id="content" placeholder="e.g. make dinner"/>
 
@@ -40,7 +42,7 @@
 
         <section class="plans">
             <h2>Plans</h2>
-            <div class="list">
+            <div id="plan-list" class="list">
                 <!-- <div class="plan-item done">
                     <label>
                         <input type="checkbox"/>
